@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 import Candidate from './Candidate/index';
+import Castle from './Castle/index';
 import './style.css';
 
 const App = () => {
@@ -13,28 +14,23 @@ const App = () => {
     { name: "Beáta Skočdopolová", avatar: '/assets/candidate03.png' },
     { name: "Lubomír Poňuchálek", avatar: '/assets/candidate04.png' },
   ]), []);
+
+  const handleVote = (name) => {
+    setPresident(name);
+  }
   
   return (
     <div className="container">
-      <div className="castle">
-        <div className="castle__image"></div>
-        <div className="castle__body">
-          <h1>Nový prezident</h1>
-          <p className="castle__president">
-            {
-              president === null ? 'Vyberte svého kandidáta' : president
-            }
-          </p>
-        </div>
-      </div>
+      <Castle president={president} />
       
-      <h2>Kandidátí</h2>
+      <h2>Candidates</h2>
       <div className="candidate-list">
         {candidates.map((c) => (
           <Candidate 
             key={c.name}
             name={c.name} 
             avatar={c.avatar} 
+            onVote={handleVote}
           />
         ))}
       </div>

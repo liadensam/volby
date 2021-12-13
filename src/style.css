@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 200;
 }
 
@@ -26,21 +27,6 @@ h2 {
   max-width: 40rem;
   margin-right: auto;
   margin-left: auto;
-}
-
-.castle {
-  display: flex;
-}
-
-.castle__image {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/castle.jpg);
-  background-size: contain;
-}
-
-.castle__body {
-  margin-left: 2rem;
 }
 
 .candidate-list {
